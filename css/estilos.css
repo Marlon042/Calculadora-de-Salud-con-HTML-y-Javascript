@@ -1,0 +1,106 @@
+h1 {
+  text-align: center;
+  margin: 30 auto;
+  max-width: 400px;
+  margin-top: auto;
+  margin-bottom: 15;
+  color: rgba(0, 4, 226, 0);
+
+  background-image: url("../assets/Nordiclogo.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 120px;
+  height: 90px;
+ 
+}
+
+
+form {
+  float:left;
+  width: 426px;
+  height: 500px;
+  background-color: rgba(187, 203, 211, 0.877);
+  border-style: solid;
+
+  
+}
+
+.form-container {
+  margin: 0 auto;
+  max-width: 950px;
+  
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 80%;
+}
+
+form button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-left: 150px;
+  margin-top: 40px;
+  cursor: pointer;
+  
+}
+
+label {
+  display: list-item;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.resultados {
+  float: right;
+  width: 505px;
+  height: 500px;
+  margin-right: 170px;
+  background-color: rgba(23, 42, 85, 0.925);
+  border-style:solid;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+.resultados p {
+  line-height: 4.5;
+  color: white;
+}
+.resultados h2 {
+  color: rgb(88, 182, 226);
+}
+
+body {
+  background-image: url(../assets/gim1.jpg), url(../assets/frutas.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left center, right center;
+  background-size: auto 170%; /* Ajustar la altura de las imágenes a la mitad de la pantalla */
+  
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.botones button {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(23, 42, 85);
+  color: rgb(23, 42, 85);
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.botones button:hover {
+  background-color: rgb(127, 146, 190);
+  color: white;
+}
+
+
+

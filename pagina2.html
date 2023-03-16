@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <title>Calculadora de Salud</title>
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+</head>
+
+<body>
+  <h1>.</h1>
+  <div class="form-container">
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre"><br><br>
+
+      <label for="genero">Género:</label>
+      <select id="genero">
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select><br><br>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad"><br><br>
+
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso"><br><br>
+
+      <label for="estatura">Estatura (cm):</label>
+      <input type="number" id="estatura"><br><br>
+
+      <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+  </div>
+  <div class="resultados">
+    <h2>Resultados:</h2>
+    <p>Tasa Metabólica Basal: <span id="tmb"></span> calorías por día</p>
+    <p>Porcentaje de Grasa Corporal: <span id="pgc"></span>%</p>
+    <p>Porcentaje de Masa Corporal: <span id="pmc"></span>%</p>
+    <p>Requerimiento de Agua: <span id="agua"></span> litros por día</p>
+    <div class="botones">
+      <button type="button">Crear rutina</button>
+      <button type="button">Ver plan de alimentación</button>
+    </div>
+
+  </div>
+</body>
+<script>
+  function calcular() {
+    // Obtener valores del formulario
+    var nombre = document.getElementById("nombre").value;
+    var genero = document.getElementById("genero").value;
+    var edad = document.getElementById("edad").value;
+    var peso = document.getElementById("peso").value;
+    var estatura = document.getElementById("estatura").value;
+
+    // Calcular Tasa Metabolica Basal
+    if (genero === "M") {
+      var tmb = 88.362 + (13.397 * peso) + (4.799 * estatura) - (5.677 * edad);
+    } else {
+      var tmb = 447.593 + (9.247 * peso) + (3.098 * estatura) - (4.330 * edad);
+    }
+
+    // Mostrar TMB
+    document.getElementById("tmb").innerHTML = tmb.toFixed(2);
+
+    // Convertir genero a valor numérico
+    var generoNum = (genero === "M") ? 1 : 0;
+
+    // Calcular Porcentaje de Grasa Corporal
+    var altura = estatura / 100;
+    var imc = peso / (altura * altura);
+    var pgc = (1.2 * imc) + (0.23 * edad) - (10.8 * generoNum) - 5.4;
+
+    // Muestra el Porcentaje de Grasa Corporal
+    document.getElementById("pgc").innerHTML = pgc.toFixed(2);
+
+    // Calcular Porcentaje de Masa Corporal
+    var pmc = 100 - pgc;
+
+    // Muestra el Porcentaje de Masa Corporal
+    document.getElementById("pmc").innerHTML = pmc.toFixed(2);
+
+    // Calcular Requerimiento de Agua
+    var agua = peso * 0.033;
+
+    // Mostrar Requerimiento de Agua
+    document.getElementById("agua").innerHTML = agua.toFixed(2) + "%";
+  }
+</script>
