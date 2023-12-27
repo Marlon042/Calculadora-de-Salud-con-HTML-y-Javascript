@@ -1,5 +1,5 @@
 
 
 
-# Laboratorio1.github.io
- Laboratorio 1 parte 2
+# Laboratorio1
+Calculadora de salud, hecha con HTML y Javascript
